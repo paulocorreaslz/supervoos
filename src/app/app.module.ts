@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FlightsComponent } from './flights/flights.component';
 import { AirportsComponent } from './airports/airports.component';
-import { AccordionModule } from 'primeng/accordion';   
-import { MenuItem } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
@@ -20,8 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     FlightsComponent,
-    AirportsComponent,
-    AccordionModule
+    AirportsComponent
   ],
   imports: [
     BrowserModule,
