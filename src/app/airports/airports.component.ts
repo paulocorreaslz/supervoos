@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AirportsService } from '../airports.service';
-
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -16,10 +15,17 @@ export class AirportsComponent implements OnInit {
     city: ''
   };
 
-  airports = [];
-  dropAirports = [];
+  airportThin = {
+    label: '',
+    value: ''
+  }
 
-  selectedAirport = {};
+  airportsRetorno = [];
+  dropAirports = [];
+  retornoHttp = [];
+  dropDownAirports = [];
+  selectedAirportDestiny = {};
+  selectedAirportOrigin = {};
 
   constructor(
     private airportsService: AirportsService,
@@ -32,19 +38,24 @@ export class AirportsComponent implements OnInit {
 
   consultar() {
     this.airportsService.listar()
-      .subscribe(resposta => { 
-        let airportThin = {
-          label: '',
-          value: ''
-        }
-        this.airports = <any> resposta;
-        Object.keys(this.airports).forEach(key=> {
-          this.airport = this.airports[key];     
-          airportThin.label = this.airport.name;
-          airportThin.value = this.airport.airport;
-          this.dropAirports.push(airportThin);
-        });
-        console.log(this.dropAirports);
+      .subscribe(resposta => {
+        this.retornoHttp = <any> resposta;
+       
+        let cont = 0;
+        this.airportsRetorno = this.retornoHttp['data'];
+        console.log(this.airportsRetorno);
+        console.log(this.dropDownAirports);
+          Object.keys(this.airportsRetorno).forEach((index) => {
+              this.airport = {...this.airportsRetorno[index]};
+              console.log(this.airport);
+              this.airportThin.label = this.airport.name;
+              this.airportThin.value = this.airport.airport;
+              console.log("inserindo:"+this.airportThin.label+" - "+this.airportThin.value);
+              this.dropDownAirports.push(this.airportThin);
+              console.log(this.dropDownAirports);
+              cont++;  
+              console.log(cont);
+          });
       })
   }
 
