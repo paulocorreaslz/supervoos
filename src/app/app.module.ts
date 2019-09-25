@@ -13,7 +13,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';   
+import { MatSliderModule } from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';              
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AirportsComponent
   ],
   imports: [
+    MatDatepickerModule, 
+    MatNativeDateModule,
+    MatSliderModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

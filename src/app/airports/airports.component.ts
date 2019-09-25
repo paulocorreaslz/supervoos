@@ -36,6 +36,10 @@ export class AirportsComponent implements OnInit {
     this.consultar();
   }
 
+  onClickMe() {
+    alert('Origem:'+ this.selectedAirportOrigin +' Destino'+this.selectedAirportDestiny);
+  }
+
   consultar() {
     this.airportsService.listar()
       .subscribe(resposta => {
