@@ -45,26 +45,15 @@ export class AirportsComponent implements OnInit {
     this.airportsService.listar()
       .subscribe(resposta => {
         this.retornoHttp = <any> resposta;
-       
-        let cont = 0;
         this.airportsRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
-        // console.log(this.airportsRetorno);
-        // console.log(this.dropDownAirports);
-
-        let x = [];  
         Object.keys(this.airportsRetorno).map((index) => {
               this.airport = {...this.airportsRetorno[index]};
-              console.log(this.airport);
               this.airportThin.label = JSON.parse(JSON.stringify(this.airport.name));
               this.airportThin.value = JSON.parse(JSON.stringify(this.airport.airport));
-              let airportx = JSON.parse(JSON.stringify(this.airportThin));
-              console.log("inserindo:"+this.airportThin.label+" - "+this.airportThin.value);
-              this.dropDownAirports.push(airportx);
-              
-              cont++;  
-              console.log(cont);
+              let airportUnique = JSON.parse(JSON.stringify(this.airportThin));
+              console.log("inserindo:"+airportUnique.label+" - "+airportUnique.value);
+              this.dropDownAirports.push(airportUnique);
           });
-          console.log(this.dropDownAirports);
       })
   }
 

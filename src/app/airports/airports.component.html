@@ -1,15 +1,17 @@
-<p-panel header="Aeroportos">
-    <div class="p-grid">
-        <div class="p-col-2">Origem</div>
-        <div class="p-col-10">
-            <p-dropdown [options]="dropDownAirports" [(ngModel)]="selectedAirportOrigin" placeholder="Select o aeroporto" name="origem"></p-dropdown>              
+<div class="airport">
+    <p-panel header="Aeroportos">
+        <div class="p-grid">
+            <div class="p-col-2">Origem</div>
+            <div class="p-col-10">
+                <p-dropdown [options]="dropDownAirports" [(ngModel)]="selectedAirportOrigin" placeholder="Local de origem" name="origem"></p-dropdown>              
+            </div>
+            <div class="p-col-2">Destino</div>
+            <div class="p-col-10">
+                <p-dropdown [options]="dropDownAirports" [(ngModel)]="selectedAirportDestiny" placeholder="Local de destino" name="destino"></p-dropdown>              
+            </div>
+            <div class="p-col-2">
+                <br><button pButton type="button" (click)="onClickMe()" label="Buscar" ></button>
+            </div>
         </div>
-        <div class="p-col-2">Destino</div>
-        <div class="p-col-10">
-            <p-dropdown [options]="dropDownAirports" [(ngModel)]="selectedAirportDestiny" placeholder="Select o aeroporto" name="destino"></p-dropdown>              
-        </div>
-        <div class="p-col-2">
-            <button pButton type="button" (click)="onClickMe()" label="Buscar" ></button>
-        </div>
-    </div>
-</p-panel>
+    </p-panel>
+</div>
