@@ -20,6 +20,7 @@ export class AirportsComponent implements OnInit {
     value: ''
   }
 
+  respostaStringify = [];
   airportsRetorno = [];
   dropAirports = [];
   retornoHttp = [];
@@ -46,20 +47,24 @@ export class AirportsComponent implements OnInit {
         this.retornoHttp = <any> resposta;
        
         let cont = 0;
-        this.airportsRetorno = this.retornoHttp['data'];
-        console.log(this.airportsRetorno);
-        console.log(this.dropDownAirports);
-          Object.keys(this.airportsRetorno).forEach((index) => {
+        this.airportsRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
+        // console.log(this.airportsRetorno);
+        // console.log(this.dropDownAirports);
+
+        let x = [];  
+        Object.keys(this.airportsRetorno).map((index) => {
               this.airport = {...this.airportsRetorno[index]};
               console.log(this.airport);
-              this.airportThin.label = this.airport.name;
-              this.airportThin.value = this.airport.airport;
+              this.airportThin.label = JSON.parse(JSON.stringify(this.airport.name));
+              this.airportThin.value = JSON.parse(JSON.stringify(this.airport.airport));
+              let airportx = JSON.parse(JSON.stringify(this.airportThin));
               console.log("inserindo:"+this.airportThin.label+" - "+this.airportThin.value);
-              this.dropDownAirports.push(this.airportThin);
-              console.log(this.dropDownAirports);
+              this.dropDownAirports.push(airportx);
+              
               cont++;  
               console.log(cont);
           });
+          console.log(this.dropDownAirports);
       })
   }
 
