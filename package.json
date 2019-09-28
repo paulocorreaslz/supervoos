@@ -1,6 +1,6 @@
 {
   "name": "supervoos",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -52,7 +52,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   }, "engines": {
-    "node": "12.8.1",
-    "npm": "6.11.3"
+    "node": "~12.8.1",
+    "npm": "~6.11.3"
   }
 }
