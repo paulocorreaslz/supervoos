@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AirportsService {
 
-  apiUrl = 'https://voorepo.herokuapp.com/api/airports';
+  apiUrl = 'http://localhost:9090/api/airports';
 
+  //https://voorepo.herokuapp.com/api/airports
   constructor(private httpClient: HttpClient) { }
 
   listar() {

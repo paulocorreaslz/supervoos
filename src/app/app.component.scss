@@ -23,13 +23,32 @@ a:visited {
 a:hover {
   text-decoration: underline;
 }
+.marca{
+  text-align: center;
+  text-decoration: floralwhite;
+  color: azure;
+}
+.dropdown{
+  display: inline-flex;
+}
 
 .header {
-  position: fixed;
+  position: relative;
   display: flex;
   justify-content: space-between;
-  
   width: 100%;
   padding: 50px;
   background: linear-gradient(45deg, $fundo-esquerda 0%, $fundo-direita 100%);
+  box-shadow: 5px 5px 8px #888888;
+
+}
+
+.main{
+  display: block;
+  height: 400px;
+}
+
+.footer{
+  display: block;
+  text-align: center;
 }
