@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AirportsService } from '../airports.service';
+import { AirportsService } from './airports.service';
+import { FlightsService } from '../flights/flights.service';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -7,6 +8,7 @@ import { MessageService } from 'primeng/api';
   templateUrl: './airports.component.html',
   styleUrls: ['./airports.component.scss']
 })
+
 export class AirportsComponent implements OnInit {
 
   airport = {
@@ -30,7 +32,8 @@ export class AirportsComponent implements OnInit {
 
   constructor(
     private airportsService: AirportsService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private flightsService: FlightsService
     ) { }
 
   ngOnInit() {
@@ -38,7 +41,25 @@ export class AirportsComponent implements OnInit {
   }
 
   onClickMe() {
-    alert('Origem:'+ this.selectedAirportOrigin +' Destino'+this.selectedAirportDestiny);
+    //this.selectedAirportOrigin, this.selectedAirportDestiny
+    this.consultarVoos();
+  }
+  consultarVoos() {
+    this.flightsService.consultarVoos()
+    .subscribe(resposta => {
+      this.retornoHttp = <any> resposta;
+      console.log(resposta);
+      //   this.airportsRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
+    //   Object.keys(this.airportsRetorno).map((index) => {
+    //         this.airport = {...this.airportsRetorno[index]};
+    //         this.airportThin.label = JSON.parse(JSON.stringify(this.airport.name));
+    //         this.airportThin.value = JSON.parse(JSON.stringify(this.airport.airport));
+    //         let airportUnique = JSON.parse(JSON.stringify(this.airportThin));
+    //         console.log("inserindo:"+airportUnique.label+" - "+airportUnique.value);
+    //         this.dropDownAirports.push(airportUnique);
+    //     });
+    // })
+    });
   }
 
   consultar() {
