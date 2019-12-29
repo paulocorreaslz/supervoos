@@ -20,8 +20,10 @@ export class AirportsComponent implements OnInit {
   airportThin = {
     label: '',
     value: ''
-  }
+  };
 
+  selectedDatabusca = [];
+  dateDatabusca = [];
   respostaStringify = [];
   airportsRetorno = [];
   dropAirports = [];
@@ -42,10 +44,10 @@ export class AirportsComponent implements OnInit {
 
   onClickMe() {
     //this.selectedAirportOrigin, this.selectedAirportDestiny
-    this.consultarVoos();
+    this.consultarVoo();
   }
-  consultarVoos() {
-    this.flightsService.consultarVoos()
+  consultarVoo() {
+    this.flightsService.consultarVoos(this.selectedAirportOrigin + '', '' + this.selectedAirportDestiny, '' + this.selectedDatabusca)
     .subscribe(resposta => {
       this.retornoHttp = <any> resposta;
       console.log(resposta);

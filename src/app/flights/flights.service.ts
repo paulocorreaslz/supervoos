@@ -13,8 +13,8 @@ export class FlightsService {
   //https://voorepo.herokuapp.com/api/airports
   constructor(private httpClient: HttpClient) { }
 
-  consultarVoos() {
-    return this.httpClient.get(this.apiUrl);
+  consultarVoos(origem: string, destino: string, dataatual: string) {
+    return this.httpClient.get(this.apiUrl + '/' + origem + '/' + destino + '/' + dataatual);
   }
 
 }

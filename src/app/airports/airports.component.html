@@ -2,12 +2,18 @@
         <div class="p-grid fundo">
             <div class="p-col-2">Origem</div>
             <div class="p-col-10">
-                <p-dropdown [options]="dropDownAirports" appendTo="body" [(ngModel)]="selectedAirportOrigin" placeholder="Local de origem" name="origem"></p-dropdown>              
+                <p-dropdown [options]="dropDownAirports" appendTo="body" [(ngModel)]="selectedAirportOrigin" placeholder="Local de origem" name="origem"></p-dropdown>
             </div>
             <div class="p-col-2">Destino</div>
             <div class="p-col-10">
-                <p-dropdown [options]="dropDownAirports" appendTo="body" [(ngModel)]="selectedAirportDestiny" placeholder="Local de destino" name="destino"></p-dropdown>              
+                <p-dropdown [options]="dropDownAirports" appendTo="body" [(ngModel)]="selectedAirportDestiny" placeholder="Local de destino" name="destino"></p-dropdown>
             </div>
+
+            <div class="p-col-2">Data do Voo;</div>
+            <div class="p-col-10">
+              <p-calendar [(ngModel)]="selectedDatabusca"  appendTo="body" [showIcon]="true"></p-calendar>
+            </div>
+
             <div class="p-col-2">
                 <br><button pButton type="button" (click)="onClickMe()" label="Buscar" class="botao-sombra" ></button>
             </div>
