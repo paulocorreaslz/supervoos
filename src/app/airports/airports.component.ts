@@ -11,6 +11,8 @@ import { MessageService } from 'primeng/api';
 
 export class AirportsComponent implements OnInit {
 
+  ptBR: any;
+
   airport = {
     name: '',
     airport: '',
@@ -22,7 +24,7 @@ export class AirportsComponent implements OnInit {
     value: ''
   };
 
-  selectedDatabusca = [];
+  selectedDatabusca = '';
   dateDatabusca = [];
   respostaStringify = [];
   airportsRetorno = [];
@@ -32,6 +34,9 @@ export class AirportsComponent implements OnInit {
   selectedAirportDestiny = {};
   selectedAirportOrigin = {};
 
+  dateNow : Date = new Date();
+
+
   constructor(
     private airportsService: AirportsService,
     private messageService: MessageService,
@@ -39,15 +44,22 @@ export class AirportsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.consultar();
+    this.ptBR = {
+       dateFormat: 'dd/mm/yyyy'
+    };
+    this.consultarAirports();
   }
 
-  onClickMe() {
-    //this.selectedAirportOrigin, this.selectedAirportDestiny
-    this.consultarVoo();
+  onClickMe(){
+
+    let d = new Date(Date.parse(this.selectedDatabusca));
+    this.selectedDatabusca = `${d.getFullYear()}`+`-`+`${("0" + (d.getMonth() + 1)).slice(-2)}`+`-`+`${("0" + d.getDate()).slice(-2)}`;
+    alert(this.selectedDatabusca);
+    this.consultarVoo(this.selectedDatabusca);
   }
-  consultarVoo() {
-    this.flightsService.consultarVoos(this.selectedAirportOrigin + '', '' + this.selectedAirportDestiny, '' + this.selectedDatabusca)
+
+  consultarVoo($datavoo: any) {
+    this.flightsService.consultarVoos(this.selectedAirportOrigin + '', '' + this.selectedAirportDestiny, '' + $datavoo)
     .subscribe(resposta => {
       this.retornoHttp = <any> resposta;
       console.log(resposta);
@@ -64,7 +76,7 @@ export class AirportsComponent implements OnInit {
     });
   }
 
-  consultar() {
+  consultarAirports() {
     this.airportsService.listar()
       .subscribe(resposta => {
         this.retornoHttp = <any> resposta;
