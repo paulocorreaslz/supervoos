@@ -53,4 +53,10 @@ a:hover {
   display: block;
   align-items: center;
   text-align: center;
+  height: 30px;
+  bottom: -13px;
+  font-size: small;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  vertical-align: bottom;
+  background: linear-gradient(45deg, $fundo-esquerda 0%, $fundo-direita 100%);
 }
