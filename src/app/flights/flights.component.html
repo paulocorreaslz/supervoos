@@ -1,15 +1,16 @@
-<div id="flight" class="widget">
-    <div class="row">
-      <div class="left">
-        <label for="card">Companhia:</label>
-      </div>
-      <div class="left">
-        <label>Numero do voo:</label>
-      </div>
-      <div id="bmib" class="right result">
-        <span id="output"> Selecionar </span>
-      </div>
+  <div id="teste" *ngIf='mostrarVoos == true'>
+    <div *ngFor="let flight of flights" id="flight" class="widget">
+      <div class="row">
+          <div class="left">
+            <label for="card">Voo:</label>{{ flight.numFlight }}
+          </div>
+          <div class="left">
+            <label>Operadora:</label>{{ flight.origin }}
+          </div>
+          <div id="bmib" class="right result">
+            <span id="output"> Selecionar </span>
+          </div>
+        </div>
+      <div style="clear:both;"></div>
     </div>
-    <div style="clear:both;"></div>
   </div>
-  <br/>

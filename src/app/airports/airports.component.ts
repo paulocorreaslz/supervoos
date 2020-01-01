@@ -36,6 +36,14 @@ export class AirportsComponent implements OnInit {
   errors = [];
   dateNow: Date = new Date();
 
+  dadosVoos = {
+    departure: '',
+    arrival: '',
+    scales: [],
+    origin: '',
+    destination: ''
+  };
+
   escala = {
       numFlight: '',
       origin: '',
@@ -88,10 +96,10 @@ export class AirportsComponent implements OnInit {
     this.consultarAirports();
   }
 
-  onClickMe(){
+  buscarTrechosVoos() {
     let d = new Date(Date.parse(this.selectedDatabusca));
     this.selectedDatabusca = `${d.getFullYear()}`+`-`+`${("0" + (d.getMonth() + 1)).slice(-2)}`+`-`+`${("0" + d.getDate()).slice(-2)}`;
-    alert(this.selectedDatabusca);
+    // alert(this.selectedDatabusca);
     this.consultarVoo(this.selectedDatabusca);
   }
 
@@ -106,10 +114,12 @@ export class AirportsComponent implements OnInit {
         });
       } else {
         this.dataRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
+        this.dadosVoos = JSON.parse(JSON.stringify(this.dataRetorno));
         console.log('Arrival:' + this.dataRetorno.arrival);
         console.log('Departure:' + this.dataRetorno.departure);
         Object.keys(this.dataRetorno.scales).map((index) => {
           this.escala = this.dataRetorno.scales[index];
+          this.dadosVoos.scales.push(this.escala);
           console.log('Escala1:' + this.escala.numFlight);
           console.log('Escala2:' + this.escala.origin);
           console.log('Escala3:' + this.escala.destination);
@@ -119,15 +129,6 @@ export class AirportsComponent implements OnInit {
           console.log('Escala7:' + this.escala.dateTimeDeparture);
           console.log('Escala8:' + this.escala.dateTimeArrival);
         });
-
-        // Object.keys(this.dataRetorno).map((index) => {
-        //     this.dataRetorno = {...this.airportsRetorno[index]};
-        //     this.airportThin.label = JSON.parse(JSON.stringify(this.airport.name));
-        //     this.airportThin.value = JSON.parse(JSON.stringify(this.airport.airport));
-        //     const airportUnique = JSON.parse(JSON.stringify(this.airportThin));
-        //     console.log('inserindo:' + airportUnique.label + ' - ' + airportUnique.value);
-        //     this.dropDownAirports.push(airportUnique);
-        // });
       }
     });
   }

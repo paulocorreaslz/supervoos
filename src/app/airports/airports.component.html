@@ -13,8 +13,8 @@
               <p-calendar [(ngModel)]="selectedDatabusca" dateFormat="dd/mm/yy" appendTo="body" [showIcon]="true"></p-calendar>
             </div>
             <div class="p-col-2">
-                <br><button pButton type="button" (click)="onClickMe()" label="Buscar" class="botao-sombra" ></button>
+                <br><button pButton type="button" (click)="s()" label="Buscar" class="botao-sombra" ></button>
             </div>
         </div>
 </div>
-<app-flights></app-flights>
+<app-flights [dadosVoosAirportsComponent]=dadosVoos></app-flights>
