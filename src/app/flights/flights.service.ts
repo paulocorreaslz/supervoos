@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class FlightsService {
 
-  apiUrl = 'http://localhost:9090/api/search';
+  apiUrl = 'https://voorepo.herokuapp.com/api/search';
 
   //http://localhost:9090/api/airports
   //https://voorepo.herokuapp.com/api/airports
