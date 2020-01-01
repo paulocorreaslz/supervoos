@@ -142,8 +142,8 @@ export class AirportsComponent implements OnInit {
               this.airport = {...this.airportsRetorno[index]};
               this.airportThin.label = JSON.parse(JSON.stringify(this.airport.name));
               this.airportThin.value = JSON.parse(JSON.stringify(this.airport.airport));
-              let airportUnique = JSON.parse(JSON.stringify(this.airportThin));
-              console.log("inserindo:"+airportUnique.label+" - "+airportUnique.value);
+              const airportUnique = JSON.parse(JSON.stringify(this.airportThin));
+              // console.log('inserindo:' + airportUnique.label + ' - ' + airportUnique.value);
               this.dropDownAirports.push(airportUnique);
           });
       })
