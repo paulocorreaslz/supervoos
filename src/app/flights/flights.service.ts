@@ -9,8 +9,8 @@ export class FlightsService {
 
   apiUrl = 'https://voorepo.herokuapp.com/api/search';
 
-  //http://localhost:9090/api/airports
-  //https://voorepo.herokuapp.com/api/airports
+  // http://localhost:9090/api/airports
+  // https://voorepo.herokuapp.com/api/airports
   constructor(private httpClient: HttpClient) { }
 
   consultarVoos(origem: string, destino: string, dataatual: string) {

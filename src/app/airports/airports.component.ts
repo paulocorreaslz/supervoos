@@ -36,6 +36,8 @@ export class AirportsComponent implements OnInit {
   errors = [];
   dateNow: Date = new Date();
 
+  mostraVoos = false;
+
   dadosVoos = {
     departure: '',
     arrival: '',
@@ -84,8 +86,6 @@ export class AirportsComponent implements OnInit {
     origin: ''
   };
 
-
-
   constructor(
     private airportsService: AirportsService,
     private messageService: MessageService,
@@ -97,14 +97,15 @@ export class AirportsComponent implements OnInit {
   }
 
   buscarTrechosVoos() {
-    let d = new Date(Date.parse(this.selectedDatabusca));
-    this.selectedDatabusca = `${d.getFullYear()}`+`-`+`${("0" + (d.getMonth() + 1)).slice(-2)}`+`-`+`${("0" + d.getDate()).slice(-2)}`;
+    const d = new Date(Date.parse(this.selectedDatabusca));
+    // tslint:disable-next-line: max-line-length
+    this.selectedDatabusca = `${d.getFullYear()}` + `-` + `${('0' + (d.getMonth() + 1)).slice(-2)}` + `-` + `${('0' + d.getDate()).slice(-2)}`;
     // alert(this.selectedDatabusca);
     this.consultarVoo(this.selectedDatabusca);
   }
 
   consultarVoo($datavoo: any) {
-    this.flightsService.consultarVoos(this.selectedAirportOrigin + '', '' + this.selectedAirportDestiny, '' + $datavoo)
+    this.flightsService.consultarVoos(this.selectedAirportOrigin + '' , '' + this.selectedAirportDestiny, $datavoo)
     .subscribe(resposta => {
       this.retornoHttp = resposta as any;
       this.errors = JSON.parse(JSON.stringify(this.retornoHttp['errors']));
@@ -120,15 +121,16 @@ export class AirportsComponent implements OnInit {
         Object.keys(this.dataRetorno.scales).map((index) => {
           this.escala = this.dataRetorno.scales[index];
           this.dadosVoos.scales.push(this.escala);
-          console.log('Escala1:' + this.escala.numFlight);
-          console.log('Escala2:' + this.escala.origin);
-          console.log('Escala3:' + this.escala.destination);
-          console.log('Escala4:' + this.escala.dateStart.month);
-          console.log('Escala5:' + this.escala.price);
-          console.log('Escala6:' + this.escala.operator);
-          console.log('Escala7:' + this.escala.dateTimeDeparture);
-          console.log('Escala8:' + this.escala.dateTimeArrival);
+          // console.log('Escala1:' + this.escala.numFlight);
+          // console.log('Escala2:' + this.escala.origin);
+          // console.log('Escala3:' + this.escala.destination);
+          // console.log('Escala4:' + this.escala.dateStart.month);
+          // console.log('Escala5:' + this.escala.price);
+          // console.log('Escala6:' + this.escala.operator);
+          // console.log('Escala7:' + this.escala.dateTimeDeparture);
+          // console.log('Escala8:' + this.escala.dateTimeArrival);
         });
+        this.mostraVoos = true;
       }
     });
   }
@@ -136,7 +138,7 @@ export class AirportsComponent implements OnInit {
   consultarAirports() {
     this.airportsService.listar()
       .subscribe(resposta => {
-        this.retornoHttp = <any> resposta;
+        this.retornoHttp = resposta as any;
         this.airportsRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
         Object.keys(this.airportsRetorno).map((index) => {
               this.airport = {...this.airportsRetorno[index]};
@@ -146,7 +148,7 @@ export class AirportsComponent implements OnInit {
               // console.log('inserindo:' + airportUnique.label + ' - ' + airportUnique.value);
               this.dropDownAirports.push(airportUnique);
           });
-      })
+      });
   }
 
 }

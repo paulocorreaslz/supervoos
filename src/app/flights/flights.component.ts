@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FlightsService } from './flights.service';
 import { AirportsComponent } from './../airports/airports.component';
 import { MessageService } from 'primeng/api';
@@ -10,7 +10,7 @@ import { MessageService } from 'primeng/api';
 })
 export class FlightsComponent implements OnInit {
 
-  @Input() dadosVoosAirportsComponent: any;
+  @Input() Voos = {};
 
   flights = {
     departure: '',
@@ -52,22 +52,14 @@ export class FlightsComponent implements OnInit {
       dateTimeArrival: ''
     };
 
-  mostrarVoos: boolean = false;
+  mostrarVoos: boolean;
 
-  constructor(
-    private flightsService: FlightsService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.flights = this.dadosVoosAirportsComponent.dadosVoos;
+    console.log('component flight valor de flight>>>' + this.Voos);
+    this.mostrarVoos = true;
   }
 
-  // tslint:disable-next-line: use-lifecycle-interface
-  ngOnChanges(changes: SimpleChanges): void {
-    this.flights = this.dadosVoosAirportsComponent.dadosVoos;
-    if (this.flights.scales.length > 0) {
-      this.mostrarVoos = true;
-      this.ngOnInit();
-    }
-  }
 }

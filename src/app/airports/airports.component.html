@@ -17,4 +17,22 @@
             </div>
         </div>
 </div>
-<app-flights [dadosVoosAirportsComponent]=dadosVoos></app-flights>
+<br>
+<div *ngIf="mostraVoos == true">
+  <div *ngFor="let flight of dadosVoos.scales" id="flight" class="widget">
+        <div class="row">
+            <div class="left">
+              <label for="card">Voo:</label>{{ flight.numFlight }}
+            </div>
+            <div class="left">
+              <label>Operadora:</label> {{ flight.departure }}
+            </div>
+            <div id="bmib" class="right result">
+              <span id="output"> Selecionar </span>
+            </div>
+          </div>
+        <div style="clear:both;"></div>
+  </div>
+</div>
+<br>
+<!-- <app-flights [Voos]="dadosVoos"></app-flights> -->

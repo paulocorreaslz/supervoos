@@ -1,16 +1,34 @@
-  <div id="teste" *ngIf='mostrarVoos == true'>
-    <div *ngFor="let flight of flights" id="flight" class="widget">
-      <div class="row">
-          <div class="left">
-            <label for="card">Voo:</label>{{ flight.numFlight }}
-          </div>
-          <div class="left">
-            <label>Operadora:</label>{{ flight.origin }}
-          </div>
-          <div id="bmib" class="right result">
-            <span id="output"> Selecionar </span>
-          </div>
-        </div>
-      <div style="clear:both;"></div>
+
+<div id="flight1" class="widget">
+  <div class="row">
+      <div class="left">
+        <label for="card">Voo:</label> 22222222
+      </div>
+      <div class="left">
+        <label>Operadora:</label> 555555555555
+      </div>
+      <div id="bmib" class="right result">
+        <span id="output"> Selecionar </span>
+      </div>
+    </div>
+  <div style="clear:both;"></div>
+</div>
+
+{{ mostrarVoos }} {{ Voos }}<br>
+
+<div *ngIf="mostrarVoos == true">
+    <div *ngFor="let flight of flights.scales" id="flight" class="widget">
+          <div class="row">
+              <div class="left">
+                <label for="card">Voo:</label>{{ flight.numFlight }}
+              </div>
+              <div class="left">
+                <label>Operadora:</label>
+              </div>
+              <div id="bmib" class="right result">
+                <span id="output"> Selecionar </span>
+              </div>
+            </div>
+          <div style="clear:both;"></div>
     </div>
   </div>
