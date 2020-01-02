@@ -112,6 +112,7 @@ export class AirportsComponent implements OnInit {
       if (this.errors.length > 1) {
         this.errors.map((index) => {
           console.log('retorno de erro:' + index);
+          this.mostraVoos = false;
         });
       } else {
         this.dataRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));

@@ -25,7 +25,10 @@
               <label for="card">Voo:</label>{{ flight.numFlight }}
             </div>
             <div class="left">
-              <label>Operadora:</label> {{ flight.departure }}
+              <label>Operadora:</label> {{ flight.operator }}
+            </div>
+            <div class="left">
+              <label>Preço:</label> {{ flight.price }}
             </div>
             <div id="bmib" class="right result">
               <span id="output"> Selecionar </span>
@@ -35,4 +38,5 @@
   </div>
 </div>
 <br>
+<label *ngIf="mostraVoos == false">Nenhum vôo localizado.</label>
 <!-- <app-flights [Voos]="dadosVoos"></app-flights> -->
