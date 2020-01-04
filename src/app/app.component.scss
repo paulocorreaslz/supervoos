@@ -15,8 +15,7 @@ body {
   color: #5D6063;
 }
 
-a:link,
-a:visited {
+a:link, a:visited {
   color: #5D6063;
   text-decoration: none;
 }
@@ -33,14 +32,12 @@ a:hover {
 }
 
 .header {
-  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 50px;
   background: linear-gradient(45deg, $fundo-esquerda 0%, $fundo-direita 100%);
   box-shadow: 5px 5px 8px #888888;
-
 }
 
 .main{
@@ -58,7 +55,38 @@ a:hover {
   bottom: -13px;
   font-size: small;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  vertical-align: bottom;
   box-shadow: -10px -10px -10px -10px #888888;
   background: linear-gradient(45deg, $fundo-esquerda 0%, $fundo-direita 100%);
+}
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+  color: #000;
+  height: 50px;
+  background: linear-gradient(45deg, #00000F 0%, #6e6e6e 100%);
+  box-shadow: 5px 5px 8px #888888;
+}
+
+.cabecalho {
+  text-decoration: none;
+}
+
+.logo_superior {}
+
+.menu_superior {
+  display: flex;
+}
+
+.menu_superior li {
+  margin-left: 20px;
+}
+
+.menu_superior li a {
+  color: #000;
+  padding: 10px;
 }
