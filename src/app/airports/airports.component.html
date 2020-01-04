@@ -19,8 +19,10 @@
 </div>
 <br>
 <div *ngIf="mostraVoos == true">
-  <div *ngFor="let flight of dadosVoos.scales" id="flight" class="widget">
-        <div class="row">
+  <div id="area" class="area">
+    <div *ngFor="let flight of dadosVoos.scales" id="flight">
+      <div class="container">
+          <div class="item">
             <div class="left">
               <label for="card">Voo:</label>{{ flight.numFlight }}
             </div>
@@ -35,8 +37,10 @@
             </div>
           </div>
         <div style="clear:both;"></div>
+      </div>
+    </div>
   </div>
 </div>
 <br>
-<label *ngIf="mostraVoos == false">Nenhum vôo localizado.</label>
+<label *ngIf="mostraVoos == false"> Nenhum vôo localizado.</label>
 <!-- <app-flights [Voos]="dadosVoos"></app-flights> -->
