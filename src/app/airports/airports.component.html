@@ -18,29 +18,6 @@
         </div>
 </div>
 <br>
-<div *ngIf="mostraVoos == true">
-  <div id="area" class="area">
-    <div *ngFor="let flight of dadosVoos.scales" id="flight">
-      <div class="container">
-          <div class="item">
-            <div class="left">
-              <label for="card">Voo:</label>{{ flight.numFlight }}
-            </div>
-            <div class="left">
-              <label>Operadora:</label> {{ flight.operator }}
-            </div>
-            <div class="left">
-              <label>Preço:</label> {{ flight.price }}
-            </div>
-            <div id="bmib" class="right result">
-              <span id="output"> Selecionar </span>
-            </div>
-          </div>
-        <div style="clear:both;"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
+
 <label *ngIf="mostraVoos == false"> Nenhum vôo localizado.</label>
-<!-- <app-flights [Voos]="dadosVoos"></app-flights> -->
+<app-flights [VoosAirportsComponents]="dadosVoos" [mostraVoosAirportsComponents]="mostraVoos"></app-flights>

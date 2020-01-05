@@ -1,6 +1,20 @@
-.widget {
-  position: relative;
+
+.area{
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF;
+  width:100%;
+  margin:1px auto 0;
+  padding:10px 10px;
+}
+
+.container{
   font-size: small;
+  flex-direction: row;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,25 +24,25 @@
   padding:10px 10px;
   box-shadow:0 0 20px rgba(0, 0, 0, 0.15);
   border-left: 5px solid #6600cc;
+  padding-right: 5px;
+  padding-bottom: 10px;
 }
 
-.widget .row {
-  width:100%;
-  margin-bottom:5px;
-  clear:both;
-}
-
-.widget .left {
-  width:100%;
+.container .item {
   padding:5px 10px;
+  width: 150px;
+}
+
+.container .left {
+  width:100%;
   float:left;
 }
 
-.widget .right {
+.container .right {
   float:right;
 }
 
-.widget .result {
+.container .result {
   width:150px;
   float:right;
   text-align: center;

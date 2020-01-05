@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { FlightsService } from './flights.service';
 import { AirportsComponent } from './../airports/airports.component';
 import { MessageService } from 'primeng/api';
@@ -10,7 +10,8 @@ import { MessageService } from 'primeng/api';
 })
 export class FlightsComponent implements OnInit {
 
-  @Input() Voos = {};
+  @Input() VoosAirportsComponents: any;
+  @Input() mostraVoosAirportsComponents: any;
 
   flights = {
     departure: '',
@@ -52,14 +53,39 @@ export class FlightsComponent implements OnInit {
       dateTimeArrival: ''
     };
 
-  mostrarVoos: boolean;
+    mostraVoos = false;
+
+    dadosVoos = {
+      departure: '',
+      arrival: '',
+      scales: [],
+      origin: '',
+      destination: ''
+    };
+
+    dataRetorno = {
+      departure: '',
+      arrival: '',
+      scales: [],
+      destination: '',
+      origin: ''
+    };
 
   constructor() {
   }
 
   ngOnInit() {
-    console.log('component flight valor de flight>>>' + this.Voos);
-    this.mostrarVoos = true;
+    console.log('component flight valor de flight>>>' + this.VoosAirportsComponents);
   }
 
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    this.dadosVoos = this.VoosAirportsComponents;
+    Object.keys(this.dataRetorno.scales).map((index) => {
+          this.escala = this.dataRetorno.scales[index];
+          this.dadosVoos.scales.push(this.escala);
+        });
+    this.mostraVoos = true;
+  }
 }
