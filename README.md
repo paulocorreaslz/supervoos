@@ -30,3 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <a href="https://supervoos.herokuapp.com/" target="_blank"> Supervoos at Heroku </a>
 
 Search flights from Pampulha to Hercilio Luz on 11/02/2019 for tests.
+
+flight database filled with just data between 10/02/2019 and 19/02/2019.
