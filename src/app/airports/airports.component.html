@@ -10,7 +10,7 @@
             </div>
             <div class="p-col-2">Data do Voo</div>
             <div class="p-col-10">
-              <p-calendar [(ngModel)]="selectedDatabusca" [defaultDate]="defaultDate"> dateFormat="dd/mm/yy" appendTo="body" [showIcon]="true"></p-calendar>
+              <p-calendar [(ngModel)]="selectedDatabusca" [defaultDate]="dateNow" showButtonBar="true" dateFormat="dd/mm/yy" appendTo="body" [showIcon]="true"></p-calendar>
             </div>
             <div class="p-col-2">
                 <br><button pButton type="button" (click)="buscarTrechosVoos()" label="Buscar" class="botao-sombra" ></button>

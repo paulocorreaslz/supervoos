@@ -85,7 +85,7 @@ export class AirportsComponent implements OnInit {
     destination: '',
     origin: ''
   };
-  
+
   constructor(
     private airportsService: AirportsService,
     private messageService: MessageService,
@@ -93,7 +93,7 @@ export class AirportsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.dateNow.setDate('11/02/2019');
+    this.dateNow = new Date(2019, 1, 12);
     this.consultarAirports();
   }
 
