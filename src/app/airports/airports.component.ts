@@ -109,6 +109,7 @@ export class AirportsComponent implements OnInit {
     this.flightsService.consultarVoos(this.selectedAirportOrigin + '' , '' + this.selectedAirportDestiny, $datavoo)
     .subscribe(resposta => {
       this.retornoHttp = resposta as any;
+      // tslint:disable-next-line: no-string-literal
       this.errors = JSON.parse(JSON.stringify(this.retornoHttp['errors']));
       if (this.errors.length > 1) {
         this.errors.map((index) => {
@@ -116,6 +117,7 @@ export class AirportsComponent implements OnInit {
           this.mostraVoos = false;
         });
       } else {
+        // tslint:disable-next-line: no-string-literal
         this.dataRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
         this.dadosVoos = JSON.parse(JSON.stringify(this.dataRetorno));
         console.log('Arrival:' + this.dataRetorno.arrival);
@@ -141,6 +143,7 @@ export class AirportsComponent implements OnInit {
     this.airportsService.listar()
       .subscribe(resposta => {
         this.retornoHttp = resposta as any;
+        // tslint:disable-next-line: no-string-literal
         this.airportsRetorno = JSON.parse(JSON.stringify(this.retornoHttp['data']));
         Object.keys(this.airportsRetorno).map((index) => {
               this.airport = {...this.airportsRetorno[index]};
