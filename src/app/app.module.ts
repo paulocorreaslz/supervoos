@@ -16,9 +16,10 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { MatSliderModule } from '@angular/material/slider';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatNativeDateModule} from '@angular/material';
     InputTextModule,
     ButtonModule,
     ToastModule,
+    NgbModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
