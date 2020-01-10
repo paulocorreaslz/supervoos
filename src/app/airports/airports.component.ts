@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AirportsService } from './airports.service';
 import { FlightsService } from '../flights/flights.service';
 import { MessageService } from 'primeng/api';
+import { AirportModel } from '../model/AirportModel';
 
 @Component({
   selector: 'app-airports',
@@ -12,6 +13,7 @@ import { MessageService } from 'primeng/api';
 export class AirportsComponent implements OnInit {
 
   ptBR: any;
+  aeroporto: AirportModel;
 
   airport = {
     name: '',
