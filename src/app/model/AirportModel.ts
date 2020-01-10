@@ -1,16 +1,16 @@
-class AirportModel {
+export class AirportModel {
   name: string;
   airport: string;
   city: string;
 
 
-  constructor(name: string, airport: string, city: string){
+  constructor(name: string, airport: string, city: string) {
     this.name = name;
     this.airport = airport;
     this.city = city;
   }
 
-  setName(name: string){
+  setName(name: string) {
     this.name = name;
   }
   getName() {
@@ -19,7 +19,7 @@ class AirportModel {
   setAirport(airport: string) {
     this.airport = airport;
   }
-  getAirport(){
+  getAirport() {
     return this.airport;
   }
   setCity(city: string) {
