@@ -28,7 +28,7 @@ export class AuthService {
     return this.http.post<myData>('/api/auth.php',{
       username,
       password
-    })
+    });
 
   }
 
