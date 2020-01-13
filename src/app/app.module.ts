@@ -20,12 +20,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlightsComponent,
-    AirportsComponent
+    AirportsComponent,
+    LoginComponent
   ],
   imports: [
     MatDatepickerModule,
