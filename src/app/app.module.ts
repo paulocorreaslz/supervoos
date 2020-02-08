@@ -21,6 +21,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { LoginComponent } from './login/login.component';
     InputTextModule,
     ButtonModule,
     ToastModule,
-    NgbModule
+    NgbModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

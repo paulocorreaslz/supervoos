@@ -56,3 +56,11 @@ $vooindireto: #FFD700;
   border: 1px solid #eee;
   background: linear-gradient(#4EBADA 10%, #3C8EA7) repeat scroll 0 0 transparent;
 }
+
+.tp-card {
+  max-width: 359px;
+}
+.tp-header-image {
+  background-image: url('src/assets/img/fundo.jpg');
+  background-size: cover;
+}
