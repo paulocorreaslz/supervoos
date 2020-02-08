@@ -3,7 +3,6 @@
 <div *ngIf="mostraVoos == true">
   <div id="area" class="area">
     <div *ngFor="let flight of dadosVoos.scales" id="flight">
-
       <mat-card class = "tp-card">
         <mat-card-header>
            <div mat-card-avatar class = "tp-header-image"></div>
@@ -20,6 +19,7 @@
            <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
+      <br>
     </div>
   </div>
 </div>
