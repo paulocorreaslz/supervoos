@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
 
-
+import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { FlightsComponent } from './flights/flights.component';
 import { AirportsComponent } from './airports/airports.component';
@@ -23,7 +23,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-
 
 @NgModule({
   declarations: [
@@ -49,7 +48,8 @@ import { MatButtonModule } from '@angular/material/button';
     ToastModule,
     NgbModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    routing
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
