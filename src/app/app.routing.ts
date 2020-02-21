@@ -2,7 +2,6 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
-import { AppComponent } from './app.component';
 import { AdministracaoComponent } from './administracao/administracao.component';
 
 const APP_ROUTES: Routes = [
