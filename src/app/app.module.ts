@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
@@ -36,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatNativeDateModule,
     MatSliderModule,
     BrowserModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
     DropdownModule,
@@ -51,6 +53,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     routing
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })
